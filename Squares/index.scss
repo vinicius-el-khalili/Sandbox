@@ -1,0 +1,109 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+body{
+    background-color: black;
+}
+$sqr_size: 150px;
+$sqr_border:1px solid black;
+.square{
+    width: $sqr_size;
+    height: $sqr_size;
+    border: $sqr_border;
+    transform: rotateX(10deg) rotateY(45deg);
+}
+
+$cube-param:160px;
+$cube-param2:158px;
+.cube {
+    width: $cube-param;
+    height: $cube-param;
+    transform-style: preserve-3d;
+    transition: .4s;
+    transform-origin: center;
+
+    &:hover{
+        width: $cube-param;
+        height: $cube-param;
+        margin: 0px;
+        $rx:-16deg;
+        $ry:16deg;
+        $rz:0deg;
+        transform-origin: bottom;
+        transform:
+            rotateX($rx) rotateY($ry) rotateZ($rz)
+            translateX(0) translateY(0px) translateZ(0px);
+        z-index: 2;
+        .side{
+            background-color:gray;
+            border: 10px dashed white;
+            opacity: .85;
+            h1{
+                opacity: 1;
+            }
+            transition: .4s;
+        }
+        transition: 1s;
+        
+    }
+  }
+  h1{
+    transition: 0.4s;
+    opacity: 1;
+    transition: .4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;    
+    color: white;
+  }
+  .side {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    border: 10px dashed rgba(0, 0, 0, 0);
+    transition: .4s;
+    cursor: pointer;
+  }
+  
+  .top {
+    transform: translateZ(-$cube-param);
+  }
+
+  .bottom {
+    transform: translateZ(0);
+  }
+  .front {
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+    transition: .5s;
+  }
+  .back {
+    transform: translateY(-$cube-param) rotateX(90deg);
+    transform-origin: bottom;
+    transition: .5s;
+  }
+  
+  .left {
+    transform: translateZ(-$cube-param) rotateY(90deg);
+    transform-origin: right;
+  }
+
+  .right {
+    transform: translateZ(-$cube-param) rotateY(-90deg);
+    transform-origin: left;
+  }
+
+  .Cubes{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
