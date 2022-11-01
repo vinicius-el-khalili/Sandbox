@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Mouse events</title>
+</head>
+<body>
+    <div class="Container">
+        <div class="console mouse-position">
+            <h3>
+                Mouse position
+            </h3>
+            <p></p>
+        </div>
+        <div class="console mouse-movement">
+            <h3>
+                Mouse movement
+            </h3>
+            <p></p>
+        </div>
+        <div class="console mouse-hover">
+            <h3 onmouseover="HoverIn()" onmouseout="HoverOut()">
+                Mouse hover
+            </h3>
+            <p></p>
+        </div>
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>
